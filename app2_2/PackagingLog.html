@@ -1,0 +1,57 @@
+<html>  
+<head>
+    <style>     
+        html{     
+        background-color: white;     
+        padding: 5px;     
+        width: 95%;     
+        }     
+        pre {     
+        overflow-x: auto;     
+        white-space: pre-wrap;     
+        white-space: -moz-pre-wrap;     
+        white-space: -pre-wrap;     
+        white-space: -o-pre-wrap;     
+        word-wrap: break-word;     
+        }     
+    </style>     
+    
+    <script type="text/javascript">     
+            
+            function setup(htmlComponent) {     
+            
+				htmlComponent.addEventListener("DataChanged", function(event) {     
+				scrollID =  htmlComponent.Data;     
+					if (scrollID != ''){
+						if(scrollID==="bottom"){         
+							scrollToBottom();     
+						} else if(scrollID==="DOWNLOAD_MCRINSTALLER" || scrollID==="BUILD_MISSING" || scrollID==="SAMPLE_GEN" || scrollID==="USER_REQUESTED_PACKAGE"){     
+							document.getElementById(scrollID).scrollIntoView(true);     
+						} else {     
+							//document.body.innerHTML = document.body.innerHTML + scrollID;     
+							document.body.appendChild(scrollID);                 
+							scrollToBottom();     
+						}    
+						htmlComponent.Data = '';
+					}		
+				});          
+            }     
+            function scrollToBottom(){     
+            var scrollingElement = (document.scrollingElement || document.body);     
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;     
+            }     
+            
+    </script> 
+</head>
+ <body><meta charset="UTF-8">        
+ <pre><font color=blue>mcc -W 'webapp:app2_2,CONFIG:C:\Users\15693\AppData\Local\Temp\tpea5cb96b_8188_4fa3_aef0_e14bd3713921.xml' -d C:\Users\15693\Desktop\5G_based_ISAC_systemlevel_v1.0\5G_based_ISAC_systemlevel\app2_2 -v -Z autodetect -C C:\Users\15693\Desktop\5G_based_ISAC_systemlevel_v1.0\5G_based_ISAC_systemlevel\app2.mlapp</font>
+Compiler version: 8.4 (R2022a)
+Analyzing file dependencies. 
+<font color='orange'>警告: 当前不支持生成其他窗口或 App 的 Web App。请检查以下 .mlapp 文件，了解窗口和 App 依存关系:
+C:\Users\15693\Desktop\5G_based_ISAC_systemlevel_v1.0\5G_based_ISAC_systemlevel\app2.mlapp</font> 
+<font color='orange'>警告: 当前不支持您的 Web App 中生成其他窗口的任何函数。请检查以下生成其他窗口的函数: warndlg</font> 
+警告: Excluded "D:/matlab2022a/toolbox/matlab/helptools/info.m"; reason: 根据 "Compiler" 许可证，对于 "MCR" 目标环境，打包时不会包含文件或函数。请从代码中删除文件或函数，或者使用 MATLAB 函数 "isdeployed" 确保函数不会在所部署的组件中被调用。 
+Parsing file "C:\Users\15693\Desktop\5G_based_ISAC_systemlevel_v1.0\5G_based_ISAC_systemlevel\app2.mlapp" 
+	(referenced from command line). 
+
+</pre></body></html>
